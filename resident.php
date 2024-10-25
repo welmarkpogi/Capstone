@@ -397,7 +397,7 @@ $residentList = (function () use ($db) {
                           </select>
                         </div>
                       </div>
-                      <div class="col">
+                      <!-- <div class="col">
                         <div class="form-group">
                           <label>Identified As</label>
                           <select class="form-control indetity" name="indetity" id="indetity">
@@ -407,7 +407,7 @@ $residentList = (function () use ($db) {
                             <option value="Unidentified">Unidentified</option>
                           </select>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
 
                     <div class="row">

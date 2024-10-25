@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KarmaBlackshaw/Capstone.git"
+    "url": "git+https://github.com/welmarkpogi/Capstone.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KarmaBlackshaw/Capstone/issues"
+    "url": "https://github.com/welmarkpogi/Capstone/issues"
   },
-  "homepage": "https://github.com/KarmaBlackshaw/Capstone#readme"
+  "homepage": "https://github.com/welmarkpogi/Capstone#readme"
 }

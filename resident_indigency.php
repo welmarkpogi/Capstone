@@ -15,31 +15,31 @@ $residentList = (function () use ($db) {
     ->join("purok", "purok.id", "residents.purok_id")
     ->join("users", "users.id", "residents.account_id")
     ->select([
-      "id" => "residents.id",
-      "national_id" => "residents.national_id",
-      "account_id" => "residents.account_id",
-      "citizenship" => "residents.citizenship",
-      "avatar" => "users.avatar",
-      "firstname" => "residents.firstname",
-      "middlename" => "residents.middlename",
-      "lastname" => "residents.lastname",
-      "alias" => "residents.alias",
-      "birthplace" => "residents.birthplace",
-      "birthdate" => "residents.birthdate",
-      "age" => "residents.age",
-      "civilstatus" => "residents.civilstatus",
-      "gender" => "residents.gender",
-      "voterstatus" => "residents.voterstatus",
-      "identified_as" => "residents.identified_as",
-      "phone" => "residents.phone",
-      "email" => "residents.email",
-      "occupation" => "residents.occupation",
-      "address" => "residents.address",
-      "resident_type" => "residents.resident_type",
-      "remarks" => "residents.remarks",
-      "purok_id" => "purok.id",
-      "purok_name" => "purok.name",
-      "purok_details" => "purok.details",
+		"id" => "residents.id",
+		"national_id" => "residents.national_id",
+		"account_id" => "residents.account_id",
+		"citizenship" => "residents.citizenship",
+		"avatar" => "users.avatar",
+		"firstname" => "residents.firstname",
+		"middlename" => "residents.middlename",
+		"lastname" => "residents.lastname",
+		"alias" => "residents.alias",
+		"birthplace" => "residents.birthplace",
+		"birthdate" => "residents.birthdate",
+		"age" => "residents.age",
+		"civilstatus" => "residents.civilstatus",
+		"gender" => "residents.gender",
+		"voterstatus" => "residents.voterstatus",
+		"identified_as" => "residents.identified_as",
+		"phone" => "residents.phone",
+		"email" => "residents.email",
+		"occupation" => "residents.occupation",
+		"address" => "residents.address",
+		"resident_type" => "residents.resident_type",
+		"remarks" => "residents.remarks",
+		"purok_id" => "purok.id",
+		"purok_name" => "purok.name",
+		"purok_details" => "purok.details",
     ])
     ->exec();
 })();
@@ -111,23 +111,23 @@ $residentList = (function () use ($db) {
 												<?php if (!empty($residentList)): ?>
 													<?php foreach ($residentList as $row): ?>
 														<tr>
-                              <td>
-                                <div class="row">
-                                  <div class="col-2 d-flex justify-content-center align-items-center">
-                                    <img
-                                      src="<?= imgSrc($row["avatar"], "img/person.png") ?>"
-                                      alt="..."
-                                      class="avatar-img rounded-circle avatar avatar-xs"
-                                    >
-                                  </div>
-                                  <div class="col text-truncate">
-                                    <?= ucwords($row["lastname"] . ", " . $row["firstname"]) ?>
-                                  </div>
-                                </div>
-                              </td>
-															<td><?= $row["national_id"] ?></td>
-															<td><?= $row["alias"] ?></td>
-                              <td><?= empty($row["birthdate"]) ? "-" : $row["birthdate"] ?></td>
+								<td>
+									<div class="row">
+									<div class="col-2 d-flex justify-content-center align-items-center">
+										<img
+										src="<?= imgSrc($row["avatar"], "img/person.png") ?>"
+										alt="..."
+										class="avatar-img rounded-circle avatar avatar-xs"
+										>
+									</div>
+									<div class="col text-truncate">
+										<?= ucwords($row["lastname"] . ", " . $row["firstname"]) ?>
+									</div>
+									</div>
+								</td>
+																<td><?= $row["national_id"] ?></td>
+																<td><?= $row["alias"] ?></td>
+								<td><?= empty($row["birthdate"]) ? "-" : $row["birthdate"] ?></td>
 															<td><?= $row["age"] ?></td>
 															<td><?= $row["civilstatus"] ?></td>
 															<td><?= $row["gender"] ?></td>
@@ -181,7 +181,7 @@ $residentList = (function () use ($db) {
 					</div>
 				</div>
 			</div>
-
+			
 			<!-- Main Footer -->
 			<?php include "templates/main-footer.php"; ?>
 			<!-- End Main Footer -->

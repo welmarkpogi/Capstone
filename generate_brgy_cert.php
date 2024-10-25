@@ -121,7 +121,7 @@ $sec = $db
                             <b>VISION:</b>
                             <i>
                               The Eco-Tourism Hub
-                              of Leyte with a
+                              of Cordova with a
                               progressive,
                               God-loving and
                               empowered community,

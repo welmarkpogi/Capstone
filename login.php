@@ -11,7 +11,7 @@ if (isset($_SESSION["username"])) {
 
 <head>
     <?php include "templates/header.php"; ?>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Login - Barangay Poblacion Profiling System</title>
 
     <style>
@@ -19,9 +19,11 @@ if (isset($_SESSION["username"])) {
             background: transparent;
             cursor: auto;
             
+            
+            
         }
 
-        .login {
+        /* .login {
             background: url('assets/img/Logo.png');
             background-repeat: no-repeat;
             background-position: center;
@@ -30,31 +32,37 @@ if (isset($_SESSION["username"])) {
             display: flex;
             align-items: center;
             justify-content: center;
-        }
+        } */
     </style>
 </head>
 
-<body class="login">
+<body class="login bg-dark">
     <?php include "templates/loading_screen.php"; ?>
     <div class="wrapper wrapper-login">
-        <div class="container-login animated fadeIn bg-transparent b-5  shadow-lg p-4 rounded">
-            <?php include "templates/alert.php"; ?>
+        
+        <div class="container-login animated fadeIn  b-5  shadow-lg p-4 rounded">
+            
+            <h2><img src="assets/img/Logo.png" style="width: 20%; font-size:10%;" class="mx-4 m-3 my-2" alt="logo">BPP System</h2>
+            
+        
+        <?php include "templates/alert.php"; ?>
 
-            <h2 class="text-center text-dark">Mag-sign Dinhi</h2>
+        
             <div class="login-form">
+
                 <form method="POST" action="model/login.php" autocomplete="off">
                     <div class="form-group form-floating-label">
                         <input id="username" name="username" type="text" class="form-control input-border-bottom" required>
-                        <label for="username" class="placeholder"><h3>Username</h3></label>
+                        <label for="username" class="placeholder"><h3 class="fa fa-fw fa-user ">Username</h3></label>
                     </div>
                     <div class="form-group form-floating-label">
                         <input id="password" name="password" type="password" class="form-control input-border-bottom" required>
-                        <label for="password" class="placeholder"><h3>Password</h3></label>
+                        <label for="password" class="placeholder"><h3 class="fa fa-fw fa-key">Password</h3></label>
                         <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-action mb-3 d-flex flex-column gap-2">
-                        <button type="submit" class="btn btn-primary btn-block fw-bold ">Sign In</button>
-                        <a href="resident-register.php" class="btn btn-info btn-block  fw-bold">Create New Account</a>
+                        <button type="submit" class="btn btn-primary btn-block fw-bold ">Login</button>
+                        <!-- <a href="resident-register.php" class="btn btn-info btn-block  fw-bold">Create New Account</a> -->
                     </div>
                 </form>
             </div>

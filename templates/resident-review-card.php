@@ -185,7 +185,7 @@ $resident = (function () use ($db) {
                 <label>Civil Status</label>
 
                 <select class="form-control" name="civil_status" value="<?= $resident[
-                	"civilstatus"
+                "civilstatus"
                 ] ?>">
                   <option disabled selected>Select Civil Status</option>
 

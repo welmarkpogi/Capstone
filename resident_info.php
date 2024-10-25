@@ -61,12 +61,12 @@ while ($row = $result->fetch_assoc()) {
               <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                 <div>
                   <h2 class="text-white fw-bold"><?php if ($state == 'voters') {
-                                                                    echo 'Voters Information';
-                                                                } elseif ($state == 'non_voters') {
-                                                                    echo 'Voters Information';
-                                                                } else {
-                                                                    echo 'Resident Information';
-                                                                } ?></h2>
+                                echo 'Voters Information';
+                              } elseif ($state == 'non_voters') {
+                            echo 'Voters Information';
+                          } else {
+                        echo 'Resident Information';
+                      } ?></h2>
                 </div>
               </div>
             </div>
@@ -161,7 +161,7 @@ while ($row = $result->fetch_assoc()) {
                   </div>
                 </div>
               </div>
-              <!-- <div class="col">
+              <div class="col">
                             <div class="card card-stats card-danger card-round">
                                 <div class="card-body">
                                     <div class="row">
@@ -181,7 +181,7 @@ while ($row = $result->fetch_assoc()) {
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
             </div>
             <?php endif ?>
             <div class="row mt--2">
@@ -266,17 +266,17 @@ while ($row = $result->fetch_assoc()) {
               <?php if ($state != 'voters') : ?>
               <div class="col-md-3">
                 <div class="card card-stats card-<?php
-                                                                    if ($state == 'male') {
-                                                                        echo 'secondary';
-                                                                    } elseif ($state == 'female') {
-                                                                        echo 'warning';
-                                                                    } elseif ($state == 'voters') {
-                                                                        echo 'success';
-                                                                    } elseif ($state == 'non_voters') {
-                                                                        echo 'info';
-                                                                    } else {
-                                                                        echo 'primary';
-                                                                    } ?> card-round">
+                    if ($state == 'male') {
+                        echo 'secondary';
+                          } elseif ($state == 'female') {
+                                echo 'warning';
+                                    } elseif ($state == 'voters') {
+                                        echo 'success';
+                                          } elseif ($state == 'non_voters') {
+                                              echo 'info';
+                                                } else {
+                                                  echo 'primary';
+                                                    } ?> card-round">
                   <div class="card-body">
                     <div class="row">
                       <div class="col-3">

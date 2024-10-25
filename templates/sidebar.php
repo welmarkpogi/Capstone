@@ -185,6 +185,15 @@ function appendActiveClass(array $pages)
           </a>
         </li>
         <?php endif; ?>
+        <li class="
+            nav-item
+            <?= appendActiveClass(["scheduler", "generate_scheduler_report"]) ?>
+          ">
+          <a href="scheduler.php">
+            <i class="icon-layers"></i>
+            <p>Scheduler</p>
+          </a>
+        </li>
 
         <li class="
             nav-item

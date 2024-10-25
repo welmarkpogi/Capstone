@@ -178,15 +178,14 @@ $purokList = (function () use ($db) {
                           </div>
                         </div>
                       </div>
-
+                      
                       <div class="row g-0">
-                        <div class="col-sm-4">
-                          <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" class="form-control" placeholder="Enter Age" min="1" name="age"
-                              required>
-                          </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label>Age</label>
+                          <input type="number" class="form-control" id="age" name="age" placeholder="Age" readonly>
                         </div>
+                      </div>
 
                         <div class="col-sm-4">
                           <div class="form-group">
@@ -236,7 +235,7 @@ $purokList = (function () use ($db) {
                           </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        <!-- <div class="col-sm-4">
                           <div class="form-group">
                             <label>Identified As</label>
                             <select class="form-control indetity" name="identified_as">
@@ -245,7 +244,7 @@ $purokList = (function () use ($db) {
                               <option value="Unidentified" selected>Unidentified</option>
                             </select>
                           </div>
-                        </div>
+                        </div> -->
                       </div>
 
                       <div class="row g-0">
