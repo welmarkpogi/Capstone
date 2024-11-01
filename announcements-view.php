@@ -39,7 +39,6 @@ $announcement = (function () use ($db) {
     .announcement__body {
       line-height: 2rem;
     }
-
     </style>
   </head>
 
