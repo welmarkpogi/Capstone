@@ -1,4 +1,4 @@
-# db bsms
+# db capstone
 Barangay Services System using core PHP
 
 
