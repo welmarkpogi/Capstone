@@ -8,6 +8,22 @@ $result = $conn->query($query);
 
 $blotter = [];
 
+while ($row = $result->fetch_assoc()) {
+	$blotter[] = $row;
+}
+
+$announcementList = (function () use ($db) {
+	return $db
+		->from(["announcements" => "a"])
+		->select([
+			"id" => "a.id",
+			"title" => "a.title",
+			"content" => "a.content",
+			"thumbnail" => "a.thumbnail",
+			"created_at" => "a.created_at",
+		])
+		->exec();
+})();
 ?>
 
 <!DOCTYPE html>
@@ -233,6 +249,7 @@ $blotter = [];
         <!-- End Main Footer -->
 
       </div>
+
     </div>
     <?php include "templates/footer.php"; ?>
     <script src="assets/js/plugin/datatables/datatables.min.js"></script>

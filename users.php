@@ -21,7 +21,7 @@ $users = $db
 
 <head>
 	<?php include "templates/header.php"; ?>
-	<title>Barangay Poblacion Profiling System</title>
+	<title>User Management - Barangay Services Management System</title>
 </head>
 
 <body>
@@ -52,8 +52,8 @@ $users = $db
 
 							<?php if (isset($_SESSION["message"])): ?>
 								<div class="alert alert-<?php echo $_SESSION["status"]; ?> <?= $_SESSION["status"] == "danger"
- 	? "bg-danger text-light"
- 	: null ?>" role="alert">
+						? "bg-danger text-light"
+						: null ?>" role="alert">
 									<?php echo $_SESSION["message"]; ?>
 								</div>
 								<?php unset($_SESSION["message"]); ?>
@@ -158,12 +158,11 @@ $users = $db
 							<form method="POST" action="model/save_user.php" enctype="multipart/form-data">
 								<input type="hidden" name="size" value="1000000">
 								<div class="text-center">
-									<div id="my_camera" style="height: 250;" class="text-center">
-										<img src="assets/img/person.png" alt="..." class="img img-fluid" width="250">
-									</div>
+									<video id="camera-stream" width="250" autoplay playsinline></video>
+									<canvas id="camera-canvas" style="display:none;"></canvas>
 									<div class="form-group d-flex justify-content-center">
-										<button type="button" class="btn btn-danger btn-sm mr-2" id="open_cam">Open Camera</button>
-										<button type="button" class="btn btn-secondary btn-sm ml-2" onclick="save_photo()">Capture</button>
+										<button type="button" class="btn btn-danger btn-sm mr-2" onclick="startCamera()">Open Camera</button>
+										<button type="button" class="btn btn-secondary btn-sm ml-2" onclick="capturePhoto()">Capture</button>
 									</div>
 									<div id="profileImage">
 										<input type="hidden" name="profileimg">
@@ -207,6 +206,35 @@ $users = $db
 
 	</div>
 	<?php include "templates/footer.php"; ?>
+
+	<script>
+		const video = document.getElementById('camera-stream');
+		const canvas = document.getElementById('camera-canvas');
+		let cameraStream = null;
+
+		async function startCamera() {
+			try {
+				cameraStream = await navigator.mediaDevices.getUserMedia({ video: true });
+				video.srcObject = cameraStream;
+			} catch (error) {
+				alert("Error opening camera: " + error.message);
+			}
+		}
+
+		function capturePhoto() {
+			const context = canvas.getContext('2d');
+			canvas.width = video.videoWidth;
+			canvas.height = video.videoHeight;
+			context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+			const imageData = canvas.toDataURL('image/png');
+			document.querySelector('input[name="profileimg"]').value = imageData;
+
+			// Stop the camera
+			cameraStream.getTracks().forEach(track => track.stop());
+			video.srcObject = null;
+		}
+	</script>
 </body>
 
 </html>
